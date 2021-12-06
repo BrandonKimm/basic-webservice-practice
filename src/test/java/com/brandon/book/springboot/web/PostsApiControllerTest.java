@@ -85,7 +85,7 @@ public class PostsApiControllerTest {
 
         PostUpdateRequestDto requestDto = PostUpdateRequestDto.builder()
                 .title(expectedTitle)
-                .contents(expectedContent)
+                .content(expectedContent)
                 .build();
 
         String url = "http://localhost:" + port + "/api/v1/posts/" + updateId;
