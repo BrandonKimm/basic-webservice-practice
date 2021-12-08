@@ -14,6 +14,6 @@
         <module name="basic-webservice.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="1.8" />
   </component>
 </project>
