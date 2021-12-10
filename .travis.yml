@@ -15,9 +15,9 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r basic-webservice
+  - zip basic-webservice.zip -r ./*
   - mkdir -p deploy
-  - mv Basic-webservice.zip deploy/basic-webservice.zip
+  - mv basic-webservice.zip deploy/basic-webservice.zip
 
 deploy:
   - provider: s3
