@@ -14,9 +14,24 @@ cache:
 
 script: "./gradlew clean build"
 
+before_deploy:
+  - zip -r Basic-webservice
+  - mkdir -p deploy
+  - mv Basic-webservice.zip deploy/basic-webservice.zip
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: brandon-springboot-build
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private
+    local_dir: deploy
+    wait-until-deployed: true
+
 # CI Notifications Mail
 notifications:
   email:
     recipients:
       - 'dmdjqn@gmail.com'
-
