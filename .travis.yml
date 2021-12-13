@@ -34,6 +34,7 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY
     bucket: brandon-springboot-build
     key: basic-webservice.zip
+    bundle_type: zip
     deployment_group: brandon-book-webservice-group
     region: ap-northeast-2
     wait-until-deployed: true
