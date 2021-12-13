@@ -29,6 +29,15 @@ deploy:
     acl: private
     local_dir: deploy
     wait-until-deployed: true
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: brandon-springboot-build
+    key: basic-webservice.zip
+    deployment_group: brandon-book-webservice-group
+    region: ap-northeast-2
+    wait-until-deployed: true
+
 
 # CI Notifications Mail
 notifications:
