@@ -22,9 +22,9 @@ before_deploy:
   - cd before-deploy && zip -r before-deploy *
   - cd ../ && mkdir -p deploy
   - mv before-deploy/before-deploy.zip deploy/basic-webservice.zip
-  - zip basic-webservice.zip -r ./*
-  - mkdir -p deploy
-  - mv basic-webservice.zip deploy/basic-webservice.zip
+  #- zip basic-webservice.zip -r ./*
+  #- mkdir -p deploy
+  #- mv basic-webservice.zip deploy/basic-webservice.zip
 
 deploy:
   - provider: s3
