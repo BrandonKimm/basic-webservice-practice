@@ -17,16 +17,13 @@ public class ProfileController {
 
     @GetMapping("/profile")
     public String profile() {
-
-
         List<String> profiles = Arrays.asList(environment.getActiveProfiles());
         List<String> realProfiles = Arrays.asList("real", "real1", "real2");
+        String defaultProfile = profiles.isEmpty()? "default" : profiles.get(0);
 
-        String defaultProfiles = profiles.isEmpty() ? "default" : profiles.get(0);
-        System.out.println("==>"+realProfiles.contains("oauth"));
         return profiles.stream()
-                .filter(p -> realProfiles.contains(p))
+                .filter(realProfiles::contains)
                 .findAny()
-                .orElse(defaultProfiles);
+                .orElse(defaultProfile);
     }
 }
