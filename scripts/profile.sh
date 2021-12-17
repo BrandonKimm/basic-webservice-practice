@@ -15,7 +15,7 @@ function find_idle_profile(){
   then
     IDLE_PROFILE=real2
   else
-    IDLE_PROFILE=real1
+    IDLE_PROFILE=real1:
 
   fi
 
